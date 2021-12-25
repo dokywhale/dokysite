@@ -293,46 +293,7 @@ var $ = jQuery;
 			$('.join-us').on('click', function(e){
 				e.preventDefault();
 
-				var $this = $(this);
-
-				if ($('body').hasClass('form-load') ) {
-					return false;
-				}
-
-				$('.under-construction').validator('validate');
-			
-				$.ajax({
-					url  : 'php/u-c.php',
-					type : 'POST',
-					data : $this.closest('.under-construction').serialize(),
-					beforeSend: function() {
-						$('body').addClass('form-load');
-					},
-					success : function(data){
-						$('body').removeClass('form-load');
-						
-						if ($(data).is('.send-true')){
-							$this.addClass('loading').delay(650).queue(function(){
-								$this.addClass('success').addClass('loaded').dequeue();
-							});
-						} else {
-							$this.addClass('error');
-						}
-						
-						$this.delay(500).queue(function(){
-							$this.removeClass('loaded').removeClass('loading').dequeue();
-						});
-						
-						$this.delay(400).queue(function(){
-							if ($(data).is('.send-true')){
-								$this.removeClass('success').closest('.under-construction').trigger('reset');
-							} else {
-								$this.removeClass('error');
-							}
-							$this.dequeue();
-						});
-					}
-				});
+				window.location.href = "https://airdrop.doky.one";
 				
 				return false;
 			});

@@ -1377,6 +1377,12 @@ body.under-construction #wrapper {
   letter-spacing: 0.27px;
 }
 
+.notyfy-decr a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: Lato;
+}
+
 @media (max-width: 767px) {
   .notyfy-me {
     padding: 56px 22px;
